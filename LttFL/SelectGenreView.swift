@@ -60,7 +60,7 @@ class SelectGenreView {
         let button = UIButton(frame: CGRectMake(0,0,self.sizeAdjuster.sizeDicWidth[3]!,self.sizeAdjuster.sizeDicHeight[3]!))
         button.layer.position = CGPoint(x: self.sizeAdjuster.sizeDicWidth[16]!, y:self.sizeAdjuster.sizeDicHeight[8]!)
         
-        let image = UIImage(named: "orange.png")
+        let image = UIImage(named: "10.png")
         button.setImage(image, forState: .Normal)
         
         ViewHelper.viewHelperInstance.addSubview(self.baseView , button:button , no:UINoStruct.GENRE_NUMBER)

@@ -28,7 +28,15 @@ struct WordStruct {
     static let NUMBER:[String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "100", "0"]
     
     // 褒め言葉
+    static let PRAISE_1_JP:[String] = ["いいよ", "そのちょうし"]
+    static let PRAISE_2_JP:[String] = ["かっこいい", "すばらしい"]
+    static let PRAISE_3_JP:[String] = ["さいこー", "しんじられない"]
+    
     static let PRAISE_1_EN:[String] = ["good", "nice"]
     static let PRAISE_2_EN:[String] = ["cool", "awesome"]
     static let PRAISE_3_EN:[String] = ["amazing", "fantastic"]
+    
+    static let PRAISE_1_ES:[String] = ["bien", "enhorabuena"]
+    static let PRAISE_2_ES:[String] = ["muy bien", "muy profesional"]
+    static let PRAISE_3_ES:[String] = ["impresionante", "formidable"]
 }

@@ -14,10 +14,12 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
 
     var talker = AVSpeechSynthesizer()
     
-    var language = "ja-JP" //言語
     var rate:Float = 0.1 //速度
     let pitchMultiplier:Float = 1.8 //高さ
     var preUtteranceDelay:NSTimeInterval = 0.1 //インターバル秒
+    
+    var language = "ja-JP" //言語
+    var genre = "fruit" //ジャンル
     
     var selectLanguageView:SelectLanguageView!
     var selectGenreView:SelectGenreView!
@@ -25,9 +27,11 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
     
     var words:[String]!
     var questionNumbers:[Int]!
-    var correctNumber:Int!
+    var correctNumber:Int! = 0
     var score:[Bool]! = []
     var continueCorrect:Int = 0
+    
+    var result = ""
     
     //タイマー
     var timer : NSTimer!
@@ -43,17 +47,6 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
     }
 
     func speechSynthesizer(synthesizer: AVSpeechSynthesizer!, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance!){
-        /*
-        let word = (utterance.speechString as NSString).substringWithRange(characterRange)
-        let button = UIButton(frame: CGRectMake(0,0,100,100))
-        button.layer.position = CGPoint(x: 100, y:100)
-        
-        var iconname = word + ".png"
-        let image = UIImage(named: iconname)
-        button.setImage(image, forState: .Normal)
-        
-        ViewHelper.viewHelperInstance.addSubview(self.view , button:button , no:9999)
-        */
     }
     
     func createView(){
@@ -83,6 +76,21 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
         // 解答
         self.selectAnswerView = SelectAnswerView(view:self.view)
     }
+    func createAnswerView(){
+        let answerButtons = selectAnswerView.createAnswerButton(self.questionNumbers,language: self.language,genre: self.genre)
+        for(var i = 0; i < answerButtons.count; i++){
+            answerButtons[i].addTarget(self, action: "onClickAnswerButton:", forControlEvents: .TouchUpInside)
+        }
+        let replayButton = selectAnswerView.createReplayButton()
+        replayButton.addTarget(self, action: "onClickReplayButton:", forControlEvents: .TouchUpInside)
+    }
+    func createNextView(){
+        let nextButton = self.selectAnswerView.createNextButton(self.result)
+        let homeButton = self.selectAnswerView.createHomeButton()
+        //イベント追加
+        nextButton.addTarget(self, action: "onClickNextButton:", forControlEvents: .TouchUpInside)
+        homeButton.addTarget(self, action: "onClickHomeButton:", forControlEvents: .TouchUpInside)
+    }
     
     // ボタンイベント
     func onClickJpButton(sender: UIButton){
@@ -95,7 +103,7 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
     // ボタンイベント
     func onClickEnButton(sender: UIButton){
         
-        self.language = "en-US"
+        self.language = "en-GB"
         // ジャンル選択
         self.selectLanguageView.hidden(true)
         self.selectGenreView.hidden(false)
@@ -110,99 +118,106 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
     }
     // ボタンイベント
     func onClickNumberButton(sender: UIButton){
+        self.genre = "number"
         words = WordStruct.NUMBER
         self.selectGenreView.hidden(true)
         self.speech(self.getQuestion())
-        let answerButtons = selectAnswerView.createAnswerButton(self.questionNumbers)
-        for(var i = 0; i < answerButtons.count; i++){
-            answerButtons[i].addTarget(self, action: "onClickAnswerButton:", forControlEvents: .TouchUpInside)
-        }
-        
+        self.createAnswerView()
     }
     // ボタンイベント
     func onClickFruitButton(sender: UIButton){
+        self.genre = "fruit"
         switch self.language {
         case "ja-JP":
-            words = WordStruct.FRUIT_JP
+            self.words = WordStruct.FRUIT_JP
             break
-        case "en-US":
-            words = WordStruct.FRUIT_EN
+        case "en-GB":
+            self.words = WordStruct.FRUIT_EN
             break
         case "es-ES":
-            words = WordStruct.FRUIT_ES
+            self.words = WordStruct.FRUIT_ES
             break
         default:
-            words = WordStruct.FRUIT_JP
+            self.words = WordStruct.FRUIT_JP
             break
         }
         self.selectGenreView.hidden(true)
         self.speech(self.getQuestion())
-        let answerButtons = selectAnswerView.createAnswerButton(self.questionNumbers)
-        for(var i = 0; i < answerButtons.count; i++){
-            answerButtons[i].addTarget(self, action: "onClickAnswerButton:", forControlEvents: .TouchUpInside)
-        }
+        self.createAnswerView()
     }
     // ボタンイベント
     func onClickVegetableButton(sender: UIButton){
+        self.genre = "vegetable"
         switch self.language {
         case "ja-JP":
-            words = WordStruct.VEGETABLE_JP
+            self.words = WordStruct.VEGETABLE_JP
             break
-        case "en-US":
-            words = WordStruct.VEGETABLE_EN
+        case "en-GB":
+            self.words = WordStruct.VEGETABLE_EN
             break
         case "es-ES":
-            words = WordStruct.VEGETABLE_ES
+            self.words = WordStruct.VEGETABLE_ES
             break
         default:
-            words = WordStruct.VEGETABLE_JP
+            self.words = WordStruct.VEGETABLE_JP
             break
         }
         self.selectGenreView.hidden(true)
         self.speech(self.getQuestion())
+        self.createAnswerView()
     }
     // ボタンイベント
     func onClickAnswerButton(sender: UIButton){
         
+        var selectLanguage = self.language
+        self.language = "en-US"
+        
         self.selectAnswerView.hiddenNext(false)
         self.selectAnswerView.hiddenAnswer(true)
-        var result = ""
+        self.result = ""
         if(sender.accessibilityHint == self.words![self.correctNumber]){
             //正解
             self.score.append(true)
             self.continueCorrect++
-            result = self.getAnswerGood()
+            self.result = self.getAnswerGood()
             self.speech(result)
         }else{
             //不正解
             score.append(false)
             self.continueCorrect = 0
-            result = self.getAnswerBad()
+            self.result = self.getAnswerBad()
             self.speech(result)
             
         }
-        let nextButton = self.selectAnswerView.createNextButton(result)
-        //イベント追加
-        nextButton.addTarget(self, action: "onClickNextButton:", forControlEvents: .TouchUpInside)
         
-        //self.timer(true)
+        self.language = selectLanguage
+        
+        self.createNextView()
     }
     // ボタンイベント
     func onClickNextButton(sender: UIButton){
         
         self.speech(self.getQuestion())
-        let answerButtons = selectAnswerView.createAnswerButton(self.questionNumbers)
-        for(var i = 0; i < answerButtons.count; i++){
-            answerButtons[i].addTarget(self, action: "onClickAnswerButton:", forControlEvents: .TouchUpInside)
-        }
+        self.createAnswerView()
+        
         self.selectAnswerView.hiddenNext(true)
         self.selectAnswerView.hiddenAnswer(false)
         
     }
+    // ボタンイベント
+    func onClickHomeButton(sender: UIButton){
+        self.selectAnswerView.hiddenNext(true)
+        self.selectAnswerView.hiddenAnswer(true)
+        self.createView()
+    }
+    // ボタンイベント
+    func onClickReplayButton(sender: UIButton){
+        self.speech(self.words![self.correctNumber])
+    }
+    
     func getQuestion()->NSString{
         var text = ""
         self.questionNumbers = []
-        self.correctNumber = 0
         var choice = Int(arc4random() % 9)
         for(var i = 0; i < UINoStruct.ANSWER.count; i++){
             var ok = false;
@@ -210,10 +225,16 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
             while(!ok){
                 ok = true
                 number = Int(arc4random() % 20)
+                //出題数より多いNG
                 if(number >= self.words!.count){
                     ok = false
                 }
+                //前回の正解NG
+                if(number == self.correctNumber){
+                    ok = false
+                }
                 if(ok){
+                    //すでに選択済みNG
                     for(var j = 0; j < self.questionNumbers.count; j++){
                         if(self.questionNumbers[j] == number){
                             ok = false
@@ -227,7 +248,6 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
                 self.correctNumber = number
             }
         }
-        println(questionNumbers)
         return self.words![self.correctNumber]
     }
     
@@ -258,6 +278,30 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
         utterance.pitchMultiplier = self.pitchMultiplier
         // 実行
         self.talker.speakUtterance(utterance)
+    }
+    
+    // 回転イベント
+    override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        
+        if(self.view.viewWithTag(UINoStruct.LANGUAGE_LABEL) != nil && !self.view.viewWithTag(UINoStruct.LANGUAGE_LABEL)!.hidden){
+            self.createView()
+            self.selectGenreView.hidden(true)
+            self.selectLanguageView.hidden(false)
+        }else if(self.view.viewWithTag(UINoStruct.GENRE_LABEL) != nil && !self.view.viewWithTag(UINoStruct.GENRE_LABEL)!.hidden){
+            self.createView()
+            self.selectLanguageView.hidden(true)
+            self.selectGenreView.hidden(false)
+        }else if(self.view.viewWithTag(UINoStruct.QUESTION_REPLAY) != nil && !self.view.viewWithTag(UINoStruct.QUESTION_REPLAY)!.hidden){
+            self.selectAnswerView = SelectAnswerView(view:self.view)
+            self.createAnswerView()
+            self.selectAnswerView.hiddenNext(true)
+            self.selectAnswerView.hiddenAnswer(false)
+        }else if(self.view.viewWithTag(UINoStruct.QUESTION_RESULT) != nil && !self.view.viewWithTag(UINoStruct.QUESTION_RESULT)!.hidden){
+            self.selectAnswerView = SelectAnswerView(view:self.view)
+            self.createNextView()
+            self.selectAnswerView.hiddenAnswer(true)
+            self.selectAnswerView.hiddenNext(false)
+        }
     }
     
 }

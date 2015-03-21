@@ -13,6 +13,8 @@ class SelectLanguageView {
     var sizeAdjuster:SizeAdjuster!
     let LABEL_COLOR = "ff8800"
     let LABEL_ALPHA = CGFloat(1.0)
+    let BORDER_COLOR = "888888"
+    let BORDER_ALPHA = CGFloat(0.5)
     
     init(view:UIView){
         self.baseView = view
@@ -57,10 +59,12 @@ class SelectLanguageView {
     
     func createJpButton()->UIButton {
         // UIボタンを作成
-        let button = UIButton(frame: CGRectMake(0,0,self.sizeAdjuster.sizeDicWidth[3]!,self.sizeAdjuster.sizeDicHeight[3]!))
-        button.layer.position = CGPoint(x: self.sizeAdjuster.sizeDicWidth[16]!, y:self.sizeAdjuster.sizeDicHeight[8]!)
+        let button = UIButton(frame: CGRectMake(0,0,self.sizeAdjuster.sizeDicWidth[4]!,self.sizeAdjuster.sizeDicHeight[3]!))
+        button.layer.position = CGPoint(x: self.sizeAdjuster.sizeDicWidth[16]!, y:self.sizeAdjuster.sizeDicHeight[24]!)
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.getColor(self.BORDER_COLOR, alpha: self.BORDER_ALPHA).CGColor
         
-        let image = UIImage(named: "cam.png")
+        let image = UIImage(named: "Japan.png")
         button.setImage(image, forState: .Normal)
         
         ViewHelper.viewHelperInstance.addSubview(self.baseView , button:button , no:UINoStruct.LANGUAGE_JP)
@@ -70,10 +74,12 @@ class SelectLanguageView {
     
     func createEnButton()->UIButton {
         // UIボタンを作成
-        let button = UIButton(frame: CGRectMake(0,0,self.sizeAdjuster.sizeDicWidth[3]!,self.sizeAdjuster.sizeDicHeight[3]!))
-        button.layer.position = CGPoint(x: self.sizeAdjuster.sizeDicWidth[16]!, y:self.sizeAdjuster.sizeDicHeight[16]!)
+        let button = UIButton(frame: CGRectMake(0,0,self.sizeAdjuster.sizeDicWidth[4]!,self.sizeAdjuster.sizeDicHeight[3]!))
+        button.layer.position = CGPoint(x: self.sizeAdjuster.sizeDicWidth[16]!, y:self.sizeAdjuster.sizeDicHeight[8]!)
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.getColor(self.BORDER_COLOR, alpha: self.BORDER_ALPHA).CGColor
         
-        let image = UIImage(named: "camc.png")
+        let image = UIImage(named: "United-Kingdom.png")
         button.setImage(image, forState: .Normal)
         
         ViewHelper.viewHelperInstance.addSubview(self.baseView , button:button , no:UINoStruct.LANGUAGE_EN)
@@ -83,10 +89,12 @@ class SelectLanguageView {
     
     func createEsButton()->UIButton {
         // UIボタンを作成
-        let button = UIButton(frame: CGRectMake(0,0,self.sizeAdjuster.sizeDicWidth[3]!,self.sizeAdjuster.sizeDicHeight[3]!))
-        button.layer.position = CGPoint(x: self.sizeAdjuster.sizeDicWidth[16]!, y:self.sizeAdjuster.sizeDicHeight[24]!)
+        let button = UIButton(frame: CGRectMake(0,0,self.sizeAdjuster.sizeDicWidth[4]!,self.sizeAdjuster.sizeDicHeight[3]!))
+        button.layer.position = CGPoint(x: self.sizeAdjuster.sizeDicWidth[16]!, y:self.sizeAdjuster.sizeDicHeight[16]!)
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.getColor(self.BORDER_COLOR, alpha: self.BORDER_ALPHA).CGColor
         
-        let image = UIImage(named: "camg.png")
+        let image = UIImage(named: "Spain.png")
         button.setImage(image, forState: .Normal)
         
         ViewHelper.viewHelperInstance.addSubview(self.baseView , button:button , no:UINoStruct.LANGUAGE_ES)

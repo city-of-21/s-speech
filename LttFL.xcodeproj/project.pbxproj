@@ -8,6 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		BE941AC81AB421B9000FD102 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE941AC71AB421B9000FD102 /* UIColorExtension.swift */; };
+		BE941ACB1AB5AB03000FD102 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941AC91AB5AB03000FD102 /* home.png */; };
+		BE941ACC1AB5AB03000FD102 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941ACA1AB5AB03000FD102 /* next.png */; };
+		BE941ACE1AB6FAE7000FD102 /* Japan.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941ACD1AB6FAE7000FD102 /* Japan.png */; };
+		BE941AD01AB6FAFA000FD102 /* Spain.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941ACF1AB6FAFA000FD102 /* Spain.png */; };
+		BE941AD21AB6FB09000FD102 /* United-Kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941AD11AB6FB09000FD102 /* United-Kingdom.png */; };
+		BE941ADF1AB71300000FD102 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941AD31AB71300000FD102 /* 0.png */; };
+		BE941AE01AB71300000FD102 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941AD41AB71300000FD102 /* 1.png */; };
+		BE941AE11AB71300000FD102 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941AD51AB71300000FD102 /* 2.png */; };
+		BE941AE21AB71300000FD102 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941AD61AB71300000FD102 /* 3.png */; };
+		BE941AE31AB71300000FD102 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941AD71AB71300000FD102 /* 4.png */; };
+		BE941AE41AB71300000FD102 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941AD81AB71300000FD102 /* 5.png */; };
+		BE941AE51AB71300000FD102 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941AD91AB71300000FD102 /* 6.png */; };
+		BE941AE61AB71300000FD102 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941ADA1AB71300000FD102 /* 7.png */; };
+		BE941AE71AB71300000FD102 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941ADB1AB71300000FD102 /* 8.png */; };
+		BE941AE81AB71300000FD102 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941ADC1AB71300000FD102 /* 9.png */; };
+		BE941AE91AB71300000FD102 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941ADD1AB71300000FD102 /* 10.png */; };
+		BE941AEA1AB71300000FD102 /* 100.png in Resources */ = {isa = PBXBuildFile; fileRef = BE941ADE1AB71300000FD102 /* 100.png */; };
+		BEAB411A1ABCF9DE0093D5A1 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = BEAB41191ABCF9DE0093D5A1 /* play.png */; };
+		BEAB411C1ABD12350093D5A1 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = BEAB411B1ABD12350093D5A1 /* splash.png */; };
 		BED1F8991A9858830015C2C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1F8981A9858830015C2C8 /* AppDelegate.swift */; };
 		BED1F89B1A9858830015C2C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1F89A1A9858830015C2C8 /* ViewController.swift */; };
 		BED1F89E1A9858830015C2C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED1F89C1A9858830015C2C8 /* Main.storyboard */; };
@@ -15,7 +34,6 @@
 		BED1F8A31A9858830015C2C8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED1F8A11A9858830015C2C8 /* LaunchScreen.xib */; };
 		BED1F8AF1A9858830015C2C8 /* LttFLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1F8AE1A9858830015C2C8 /* LttFLTests.swift */; };
 		BED1F8B91A9861950015C2C8 /* WordStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1F8B81A9861950015C2C8 /* WordStruct.swift */; };
-		BED1F8BB1A9865BF0015C2C8 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1F8BA1A9865BF0015C2C8 /* MenuView.swift */; };
 		BED1F8BD1A9866110015C2C8 /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1F8BC1A9866110015C2C8 /* ViewHelper.swift */; };
 		BED1F8BF1A9866470015C2C8 /* SizeAdjuster.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1F8BE1A9866470015C2C8 /* SizeAdjuster.swift */; };
 		BED1F8C11A9866790015C2C8 /* UINoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1F8C01A9866790015C2C8 /* UINoStruct.swift */; };
@@ -66,6 +84,25 @@
 
 /* Begin PBXFileReference section */
 		BE941AC71AB421B9000FD102 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		BE941AC91AB5AB03000FD102 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		BE941ACA1AB5AB03000FD102 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		BE941ACD1AB6FAE7000FD102 /* Japan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Japan.png; sourceTree = "<group>"; };
+		BE941ACF1AB6FAFA000FD102 /* Spain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spain.png; sourceTree = "<group>"; };
+		BE941AD11AB6FB09000FD102 /* United-Kingdom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "United-Kingdom.png"; sourceTree = "<group>"; };
+		BE941AD31AB71300000FD102 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
+		BE941AD41AB71300000FD102 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		BE941AD51AB71300000FD102 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		BE941AD61AB71300000FD102 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		BE941AD71AB71300000FD102 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		BE941AD81AB71300000FD102 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		BE941AD91AB71300000FD102 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		BE941ADA1AB71300000FD102 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		BE941ADB1AB71300000FD102 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
+		BE941ADC1AB71300000FD102 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
+		BE941ADD1AB71300000FD102 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
+		BE941ADE1AB71300000FD102 /* 100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100.png; sourceTree = "<group>"; };
+		BEAB41191ABCF9DE0093D5A1 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		BEAB411B1ABD12350093D5A1 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		BED1F8931A9858830015C2C8 /* LttFL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LttFL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED1F8971A9858830015C2C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BED1F8981A9858830015C2C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +114,6 @@
 		BED1F8AD1A9858830015C2C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BED1F8AE1A9858830015C2C8 /* LttFLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LttFLTests.swift; sourceTree = "<group>"; };
 		BED1F8B81A9861950015C2C8 /* WordStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordStruct.swift; sourceTree = "<group>"; };
-		BED1F8BA1A9865BF0015C2C8 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		BED1F8BC1A9866110015C2C8 /* ViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
 		BED1F8BE1A9866470015C2C8 /* SizeAdjuster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeAdjuster.swift; sourceTree = "<group>"; };
 		BED1F8C01A9866790015C2C8 /* UINoStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINoStruct.swift; sourceTree = "<group>"; };
@@ -168,6 +204,18 @@
 				BED1F8E81A9888690015C2C8 /* pumpkin.gif */,
 				BED1F8E91A9888690015C2C8 /* radish.gif */,
 				BED1F8EB1A9888690015C2C8 /* tomato.gif */,
+				BE941AD31AB71300000FD102 /* 0.png */,
+				BE941AD41AB71300000FD102 /* 1.png */,
+				BE941AD51AB71300000FD102 /* 2.png */,
+				BE941AD61AB71300000FD102 /* 3.png */,
+				BE941AD71AB71300000FD102 /* 4.png */,
+				BE941AD81AB71300000FD102 /* 5.png */,
+				BE941AD91AB71300000FD102 /* 6.png */,
+				BE941ADA1AB71300000FD102 /* 7.png */,
+				BE941ADB1AB71300000FD102 /* 8.png */,
+				BE941ADC1AB71300000FD102 /* 9.png */,
+				BE941ADD1AB71300000FD102 /* 10.png */,
+				BE941ADE1AB71300000FD102 /* 100.png */,
 				BED1F8C81A9888510015C2C8 /* apple.png */,
 				BED1F8C91A9888510015C2C8 /* banana.png */,
 				BED1F8C21A9868390015C2C8 /* cam.png */,
@@ -175,22 +223,29 @@
 				BED1F8C41A9868390015C2C8 /* camg.png */,
 				BED1F8CE1A9888510015C2C8 /* cherry.png */,
 				BED1F8DB1A9888690015C2C8 /* grape.png */,
+				BE941AC91AB5AB03000FD102 /* home.png */,
+				BE941ACD1AB6FAE7000FD102 /* Japan.png */,
 				BED1F8DC1A9888690015C2C8 /* kiwifruit.png */,
 				BED1F8DD1A9888690015C2C8 /* lemon.png */,
 				BED1F8DF1A9888690015C2C8 /* mango.png */,
 				BED1F8E01A9888690015C2C8 /* melon.png */,
+				BE941ACA1AB5AB03000FD102 /* next.png */,
 				BED1F8E21A9888690015C2C8 /* orange.png */,
 				BED1F8E31A9888690015C2C8 /* peach.png */,
 				BED1F8E41A9888690015C2C8 /* pear.png */,
 				BED1F8E51A9888690015C2C8 /* persimmon.png */,
 				BED1F8E61A9888690015C2C8 /* pineapple.png */,
+				BEAB41191ABCF9DE0093D5A1 /* play.png */,
+				BE941ACF1AB6FAFA000FD102 /* Spain.png */,
+				BEAB411B1ABD12350093D5A1 /* splash.png */,
 				BED1F8EA1A9888690015C2C8 /* strawberry.png */,
+				BE941AD11AB6FB09000FD102 /* United-Kingdom.png */,
 				BED1F8981A9858830015C2C8 /* AppDelegate.swift */,
-				BED1F8BA1A9865BF0015C2C8 /* MenuView.swift */,
 				BEED79D21AA17FDE00A46FEB /* SelectAnswerView.swift */,
 				BED1F9001A99DEEE0015C2C8 /* SelectGenreView.swift */,
 				BED1F8FE1A99DAA50015C2C8 /* SelectLanguageView.swift */,
 				BED1F8BE1A9866470015C2C8 /* SizeAdjuster.swift */,
+				BE941AC71AB421B9000FD102 /* UIColorExtension.swift */,
 				BED1F8C01A9866790015C2C8 /* UINoStruct.swift */,
 				BED1F89A1A9858830015C2C8 /* ViewController.swift */,
 				BED1F8BC1A9866110015C2C8 /* ViewHelper.swift */,
@@ -199,7 +254,6 @@
 				BED1F8A11A9858830015C2C8 /* LaunchScreen.xib */,
 				BED1F89C1A9858830015C2C8 /* Main.storyboard */,
 				BED1F8961A9858830015C2C8 /* Supporting Files */,
-				BE941AC71AB421B9000FD102 /* UIColorExtension.swift */,
 			);
 			path = LttFL;
 			sourceTree = "<group>";
@@ -314,15 +368,19 @@
 				BED1F8D81A9888510015C2C8 /* cucumber.gif in Resources */,
 				BED1F89E1A9858830015C2C8 /* Main.storyboard in Resources */,
 				BED1F8F71A9888690015C2C8 /* persimmon.png in Resources */,
+				BE941AE11AB71300000FD102 /* 2.png in Resources */,
 				BED1F8D61A9888510015C2C8 /* carrot.gif in Resources */,
 				BED1F8F91A9888690015C2C8 /* potato.gif in Resources */,
+				BE941ACB1AB5AB03000FD102 /* home.png in Resources */,
 				BED1F8D41A9888510015C2C8 /* burdock.gif in Resources */,
 				BED1F8EF1A9888690015C2C8 /* lemon.png in Resources */,
+				BE941AE01AB71300000FD102 /* 1.png in Resources */,
 				BED1F8F01A9888690015C2C8 /* lotusroot.gif in Resources */,
 				BED1F8C61A9868390015C2C8 /* camc.png in Resources */,
 				BED1F8ED1A9888690015C2C8 /* grape.png in Resources */,
 				BED1F8A31A9858830015C2C8 /* LaunchScreen.xib in Resources */,
 				BED1F8D11A9888510015C2C8 /* apple.png in Resources */,
+				BE941AD21AB6FB09000FD102 /* United-Kingdom.png in Resources */,
 				BED1F8F31A9888690015C2C8 /* onion.gif in Resources */,
 				BED1F8D31A9888510015C2C8 /* bellpepper.gif in Resources */,
 				BED1F8A01A9858830015C2C8 /* Images.xcassets in Resources */,
@@ -330,17 +388,32 @@
 				BED1F8EE1A9888690015C2C8 /* kiwifruit.png in Resources */,
 				BED1F8F51A9888690015C2C8 /* peach.png in Resources */,
 				BED1F8FA1A9888690015C2C8 /* pumpkin.gif in Resources */,
+				BE941ACC1AB5AB03000FD102 /* next.png in Resources */,
+				BE941ACE1AB6FAE7000FD102 /* Japan.png in Resources */,
 				BED1F8F81A9888690015C2C8 /* pineapple.png in Resources */,
 				BED1F8EC1A9888690015C2C8 /* ginger.gif in Resources */,
 				BED1F8FC1A9888690015C2C8 /* strawberry.png in Resources */,
+				BE941AE91AB71300000FD102 /* 10.png in Resources */,
 				BED1F8F41A9888690015C2C8 /* orange.png in Resources */,
 				BED1F8D71A9888510015C2C8 /* cherry.png in Resources */,
+				BE941AD01AB6FAFA000FD102 /* Spain.png in Resources */,
+				BE941AE31AB71300000FD102 /* 4.png in Resources */,
+				BE941AE81AB71300000FD102 /* 9.png in Resources */,
+				BEAB411A1ABCF9DE0093D5A1 /* play.png in Resources */,
+				BE941AE41AB71300000FD102 /* 5.png in Resources */,
 				BED1F8FB1A9888690015C2C8 /* radish.gif in Resources */,
+				BE941AE71AB71300000FD102 /* 8.png in Resources */,
+				BE941AE21AB71300000FD102 /* 3.png in Resources */,
+				BEAB411C1ABD12350093D5A1 /* splash.png in Resources */,
 				BED1F8FD1A9888690015C2C8 /* tomato.gif in Resources */,
 				BED1F8F21A9888690015C2C8 /* melon.png in Resources */,
+				BE941AEA1AB71300000FD102 /* 100.png in Resources */,
 				BED1F8D51A9888510015C2C8 /* cabbage.gif in Resources */,
+				BE941AE61AB71300000FD102 /* 7.png in Resources */,
+				BE941AE51AB71300000FD102 /* 6.png in Resources */,
 				BED1F8C51A9868390015C2C8 /* cam.png in Resources */,
 				BED1F8D21A9888510015C2C8 /* banana.png in Resources */,
+				BE941ADF1AB71300000FD102 /* 0.png in Resources */,
 				BED1F8C71A9868390015C2C8 /* camg.png in Resources */,
 				BED1F8F61A9888690015C2C8 /* pear.png in Resources */,
 			);
@@ -366,7 +439,6 @@
 				BED1F89B1A9858830015C2C8 /* ViewController.swift in Sources */,
 				BED1F8FF1A99DAA50015C2C8 /* SelectLanguageView.swift in Sources */,
 				BED1F8BF1A9866470015C2C8 /* SizeAdjuster.swift in Sources */,
-				BED1F8BB1A9865BF0015C2C8 /* MenuView.swift in Sources */,
 				BED1F8991A9858830015C2C8 /* AppDelegate.swift in Sources */,
 				BE941AC81AB421B9000FD102 /* UIColorExtension.swift in Sources */,
 				BEED79D31AA17FDE00A46FEB /* SelectAnswerView.swift in Sources */,

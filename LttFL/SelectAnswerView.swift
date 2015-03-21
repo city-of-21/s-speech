@@ -23,19 +23,25 @@ class SelectAnswerView {
         for(var i = 0; i < UINoStruct.ANSWER.count; i++){
             self.baseView.viewWithTag(UINoStruct.ANSWER[i])?.hidden = flag
         }
+        self.baseView.viewWithTag(UINoStruct.QUESTION_REPLAY)?.hidden = flag
     }
     func hiddenNext(flag:Bool){
         self.baseView.viewWithTag(UINoStruct.QUESTION_RESULT)?.hidden = flag
         self.baseView.viewWithTag(UINoStruct.QUESTION_NEXT)?.hidden = flag
+        self.baseView.viewWithTag(UINoStruct.QUESTION_HOME)?.hidden = flag
     }
     
     func close(){
         for(var i = 0; i < UINoStruct.ANSWER.count; i++){
             ViewHelper.viewHelperInstance.removeFromSuperview(self.baseView, no: UINoStruct.ANSWER[i])
         }
+        ViewHelper.viewHelperInstance.removeFromSuperview(self.baseView, no: UINoStruct.QUESTION_REPLAY)
+        ViewHelper.viewHelperInstance.removeFromSuperview(self.baseView, no: UINoStruct.QUESTION_RESULT)
+        ViewHelper.viewHelperInstance.removeFromSuperview(self.baseView, no: UINoStruct.QUESTION_NEXT)
+        ViewHelper.viewHelperInstance.removeFromSuperview(self.baseView, no: UINoStruct.QUESTION_HOME)
     }
     
-    func createAnswerButton(numbers:[Int])->[UIButton] {
+    func createAnswerButton(numbers:[Int],language:String,genre:String)->[UIButton] {
         
         var buttons:[UIButton]! = []
         for(var i = 0; i < UINoStruct.ANSWER.count; i++){
@@ -55,8 +61,66 @@ class SelectAnswerView {
             // UIボタンを作成
             let button = UIButton(frame: CGRectMake(0,0,self.sizeAdjuster.sizeDicWidth[3]!,self.sizeAdjuster.sizeDicHeight[3]!))
             button.layer.position = CGPoint(x: self.sizeAdjuster.sizeDicWidth[x]!, y:self.sizeAdjuster.sizeDicHeight[y]!)
-            button.accessibilityHint = WordStruct.FRUIT_EN[numbers[i]]
-            var filename = WordStruct.FRUIT_EN[numbers[i]] + ".png"
+            var filename = ""
+            switch language {
+            case "ja-JP":
+                switch genre {
+                case "number":
+                    button.accessibilityHint = WordStruct.NUMBER[numbers[i]]
+                    filename = WordStruct.NUMBER[numbers[i]] + ".png"
+                    break
+                case "fruit":
+                    button.accessibilityHint = WordStruct.FRUIT_JP[numbers[i]]
+                    filename = WordStruct.FRUIT_EN[numbers[i]] + ".png"
+                    break
+                case "vegetable":
+                    button.accessibilityHint = WordStruct.VEGETABLE_JP[numbers[i]]
+                    filename = WordStruct.VEGETABLE_EN[numbers[i]] + ".gif"
+                    break
+                default:
+                    break
+                }
+                break
+            case "en-GB":
+                switch genre {
+                case "number":
+                    button.accessibilityHint = WordStruct.NUMBER[numbers[i]]
+                    filename = WordStruct.NUMBER[numbers[i]] + ".png"
+                    break
+                case "fruit":
+                    button.accessibilityHint = WordStruct.FRUIT_EN[numbers[i]]
+                    filename = WordStruct.FRUIT_EN[numbers[i]] + ".png"
+                    break
+                case "vegetable":
+                    button.accessibilityHint = WordStruct.VEGETABLE_EN[numbers[i]]
+                    filename = WordStruct.VEGETABLE_EN[numbers[i]] + ".gif"
+                    break
+                default:
+                    break
+                }
+                break
+            case "es-ES":
+                switch genre {
+                case "number":
+                    button.accessibilityHint = WordStruct.NUMBER[numbers[i]]
+                    filename = WordStruct.NUMBER[numbers[i]] + ".png"
+                    break
+                case "fruit":
+                    button.accessibilityHint = WordStruct.FRUIT_ES[numbers[i]]
+                    filename = WordStruct.FRUIT_EN[numbers[i]] + ".png"
+                    break
+                case "vegetable":
+                    button.accessibilityHint = WordStruct.VEGETABLE_ES[numbers[i]]
+                    filename = WordStruct.VEGETABLE_EN[numbers[i]] + ".gif"
+                    break
+                default:
+                    break
+                }
+                break
+            default:
+                break
+            }
+        
             let image = UIImage(named: filename)
             button.setImage(image, forState: .Normal)
             
@@ -82,7 +146,7 @@ class SelectAnswerView {
         let button = UIButton(frame: CGRectMake(0,0,self.sizeAdjuster.sizeDicWidth[3]!,self.sizeAdjuster.sizeDicHeight[3]!))
         button.layer.position = CGPoint(x: self.sizeAdjuster.sizeDicWidth[16]!, y:self.sizeAdjuster.sizeDicHeight[18]!)
         
-        let image = UIImage(named: "apple.png")
+        let image = UIImage(named: "next.png")
         button.setImage(image, forState: .Normal)
         
         ViewHelper.viewHelperInstance.addSubview(self.baseView , button:button , no:UINoStruct.QUESTION_NEXT)
@@ -90,4 +154,31 @@ class SelectAnswerView {
         return button
     }
     
+    func createHomeButton()->UIButton {
+        
+        // UIボタンを作成
+        let button = UIButton(frame: CGRectMake(0,0,self.sizeAdjuster.sizeDicWidth[3]!,self.sizeAdjuster.sizeDicHeight[3]!))
+        button.layer.position = CGPoint(x: self.sizeAdjuster.sizeDicWidth[16]!, y:self.sizeAdjuster.sizeDicHeight[26]!)
+        
+        let image = UIImage(named: "home.png")
+        button.setImage(image, forState: .Normal)
+        
+        ViewHelper.viewHelperInstance.addSubview(self.baseView , button:button , no:UINoStruct.QUESTION_HOME)
+        
+        return button
+    }
+    
+    func createReplayButton()->UIButton {
+        
+        // UIボタンを作成
+        let button = UIButton(frame: CGRectMake(0,0,self.sizeAdjuster.sizeDicWidth[3]!,self.sizeAdjuster.sizeDicHeight[3]!))
+        button.layer.position = CGPoint(x: self.sizeAdjuster.sizeDicWidth[4]!, y:self.sizeAdjuster.sizeDicHeight[4]!)
+        
+        let image = UIImage(named: "play.png")
+        button.setImage(image, forState: .Normal)
+        
+        ViewHelper.viewHelperInstance.addSubview(self.baseView , button:button , no:UINoStruct.QUESTION_REPLAY)
+        
+        return button
+    }
 }

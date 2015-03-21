@@ -10,11 +10,6 @@ import Foundation
 
 struct UINoStruct {
     
-    static let MENU_BASE:Int = 10001
-    static let BUTTON_CAMERA:Int = 10002
-    static let BUTTON_CAMERA_CHANGE:Int = 10003
-    static let BUTTON_GRID:Int = 10004
-    
     static let LANGUAGE_LABEL:Int = 1001
     static let LANGUAGE_JP:Int = 1002
     static let LANGUAGE_EN:Int = 1003
@@ -27,6 +22,8 @@ struct UINoStruct {
     
     static let QUESTION_RESULT:Int = 301
     static let QUESTION_NEXT:Int = 302
+    static let QUESTION_HOME:Int = 303
+    static let QUESTION_REPLAY:Int = 304
     
     static let ANSWER:[Int] = [401, 402, 403, 404, 405, 406, 407, 408, 409]
 }
